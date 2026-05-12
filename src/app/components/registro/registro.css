@@ -75,3 +75,9 @@ input {
 .btn-registro:hover {
   background: #1e7e34;
 }
+.error{
+    color:#ff4d4d;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
