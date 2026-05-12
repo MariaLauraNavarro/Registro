@@ -1,0 +1,56 @@
+<div class="auth-container">
+  <div class="tabs">
+    <button (click)="activeLogin=true" [class.active]="activeLogin" >Iniciar Sesión</button>
+    <button (click)="activeLogin=false" [class.active]="!activeLogin">Registrarse</button>
+  </div>
+
+  <!-- LOGIN -->
+@if(activeLogin){
+  <form >
+    <h2>Iniciar Sesión</h2>
+    <div class="form-group">
+      <label for="emailLogin">Correo electrónico</label>
+      <input type="email" id="emailLogin" placeholder="ejemplo@correo.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="passwordLogin">Contraseña</label>
+      <input type="password" id="passwordLogin" placeholder="********" required />
+    </div>
+
+    <button type="submit" class="btn btn-login">Ingresar</button>
+    <div class="toggle">
+        ¿No tienes una cuenta? <a (click)="activeLogin=!activeLogin">Registrarse</a>.
+    </div>
+  </form>
+}
+  <!-- REGISTRO -->
+
+ @if(!activeLogin){
+  <form >
+    <h2>Registro</h2>
+    <div class="form-group">
+      <label for="name">Nombre completo</label>
+      <input type="text" id="name" placeholder="Tu nombre" required />
+    </div>
+
+    <div class="form-group">
+      <label for="emailRegistro">Correo electrónico</label>
+      <input type="email" id="emailRegistro" placeholder="ejemplo@correo.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="passwordRegistro">Contraseña</label>
+      <input type="password" id="passwordRegistro" placeholder="********" required />
+    </div>
+
+    <button type="submit" class="btn btn-registro">Registrarse</button>
+    <div class="toggle">
+        ¿Ya tienes una cuenta? <a (click)="activeLogin=!activeLogin">Iniciar Sesión</a>.
+    </div>
+      
+  </form>
+
+} 
+</div>
+
